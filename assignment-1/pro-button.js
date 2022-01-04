@@ -5,12 +5,12 @@ class ProButton extends HTMLElement {
     this.shadowRoot.innerHTML = `
     <style>
       #info-box {
-        display: block;
+        display: none;
       }
     </style>
 
     <button>Show</button>
-    <p id="info-box>
+    <p id="info-box">
         <slot></slot>
     </p>
     `;
@@ -18,11 +18,6 @@ class ProButton extends HTMLElement {
     this.isHidden = true;
     this._toggleButton = this.shadowRoot.querySelector("button");
     this._infoBox = this.shadowRoot.querySelector("p");
-
-    console.log(
-      "🚀 ~ file: pro-button.js ~ line 20 ~ ProButton ~ constructor ~ this._infoBox",
-      this._infoBox
-    );
 
     this._toggleButton.addEventListener(
       "click",
